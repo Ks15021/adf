@@ -1,0 +1,234 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Adfdevdemodata001"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage10_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage4_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage5_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage6_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage7_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage8_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage9_accountKey": {
+			"value": ""
+		},
+		"DS_AllCSVfiles_sink_accountKey": {
+			"value": ""
+		},
+		"DS_Allfiles_output_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS1_TO_ADLS2_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS1_TO_ADLS2_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_AllCSVfiles_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_CSVBULK_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEI_PARUET_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEI_PARUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_MULTICSV_P_accountKey": {
+			"value": ""
+		},
+		"LS_ONPREM_SQL_password": {
+			"value": ""
+		},
+		"LS_ON_PREM_SQL_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_copyallfiles_accountKey": {
+			"value": ""
+		},
+		"LS_empty_check_accountKey": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"SqlServer3_password": {
+			"value": ""
+		},
+		"SqlServer4_password": {
+			"value": ""
+		},
+		"SqlServer5_password": {
+			"value": ""
+		},
+		"lS_MULTICSV_P_sink_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsdevdemodata001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage10_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://adlsdevdemodata001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://adlsdevdemosink002.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"value": "https://adlsdevdemodata001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage6_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage7_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage8_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage9_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"DS_AllCSVfiles_sink_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0002.dfs.core.windows.net/"
+		},
+		"DS_Allfiles_output_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0002.dfs.core.windows.net/"
+		},
+		"LS_ADLS1_TO_ADLS2_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"LS_ADLS1_TO_ADLS2_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0002.dfs.core.windows.net/"
+		},
+		"LS_AllCSVfiles_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"LS_BULK_CSV_properties_typeProperties_url": {
+			"value": "https://adlsdevdemodata001.dfs.core.windows.net"
+		},
+		"LS_CSVBULK_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevdemosink002.dfs.core.windows.net/"
+		},
+		"LS_EXCEI_PARUET_properties_typeProperties_url": {
+			"value": "https://adlsdevdemodata001.dfs.core.windows.net/"
+		},
+		"LS_EXCEI_PARUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevdemosink002.dfs.core.windows.net/"
+		},
+		"LS_MULTICSV_P_properties_typeProperties_url": {
+			"value": "https://adlsdevdemodata001.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_SQL_properties_typeProperties_server": {
+			"value": "KS_PC\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQL_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"LS_ONPREM_SQL_properties_typeProperties_userName": {
+			"value": "KS"
+		},
+		"LS_ON_PREM_SQL_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0002.dfs.core.windows.net/"
+		},
+		"LS_copyallfiles_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"LS_empty_check_properties_typeProperties_url": {
+			"value": "https://adlsdevdemo0001.dfs.core.windows.net/"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "KS_PC\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "KS"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"value": "KS_PC\\SQLEXPRESS"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "KS"
+		},
+		"SqlServer3_properties_typeProperties_server": {
+			"value": "KS_PC\\SQLEXPRESS"
+		},
+		"SqlServer3_properties_typeProperties_database": {
+			"value": "AdventureWorksDW2022"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"value": "KS"
+		},
+		"SqlServer4_properties_typeProperties_server": {
+			"value": "KS_PC\\SQLEXPRESS"
+		},
+		"SqlServer4_properties_typeProperties_database": {
+			"value": "AdventureWorksDW2022"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"value": "KS"
+		},
+		"SqlServer5_properties_typeProperties_server": {
+			"value": "KS_PC\\SQLEXPRESS"
+		},
+		"SqlServer5_properties_typeProperties_database": {
+			"value": "AdventureWorksDW2022"
+		},
+		"SqlServer5_properties_typeProperties_userName": {
+			"value": "KS"
+		},
+		"lS_MULTICSV_P_sink_properties_typeProperties_url": {
+			"value": "https://adlsdevdemosink002.dfs.core.windows.net/"
+		},
+		"TR_EVT_Pipeline_properties_typeProperties_scope": {
+			"value": "/subscriptions/6d363509-3114-47ec-9e0f-a0f8ea1d7a0c/resourceGroups/rgdevdemodata/providers/Microsoft.Storage/storageAccounts/adlsdevdemo0001"
+		}
+	}
+}
