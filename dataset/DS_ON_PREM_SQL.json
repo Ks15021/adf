@@ -1,0 +1,41 @@
+{
+	"name": "DS_ON_PREM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ONPREM_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Schema": {
+				"type": "string",
+				"defaultValue": "dtdg"
+			},
+			"Table": {
+				"type": "string",
+				"defaultValue": "abc"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "CustomerID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FirstName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "spdemo",
+			"table": "Customers_test"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

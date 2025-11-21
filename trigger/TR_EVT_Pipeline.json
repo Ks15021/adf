@@ -1,0 +1,24 @@
+{
+	"name": "TR_EVT_Pipeline",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_EVT_Trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/Blob",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/6d363509-3114-47ec-9e0f-a0f8ea1d7a0c/resourceGroups/rgdevdemodata/providers/Microsoft.Storage/storageAccounts/adlsdevdemo0001",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

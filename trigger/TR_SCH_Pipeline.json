@@ -1,0 +1,25 @@
+{
+	"name": "TR_SCH_Pipeline",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_SCH_trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2025-11-20T16:53:00",
+				"endTime": "2025-11-21T16:55:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

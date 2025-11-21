@@ -1,0 +1,198 @@
+{
+	"name": "success_error_logging",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ON_PREM_SQL",
+						"type": "DatasetReference",
+						"parameters": {
+							"Schema": "dtdg",
+							"Table": "customers_test"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ON_PREM_SQL_SINK",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Success_log",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[audit].[loadstatus]",
+					"storedProcedureParameters": {
+						"dataread": {
+							"value": {
+								"value": "@activity('Copy data1').output.dataread",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"errorid": {
+							"value": null,
+							"type": "String"
+						},
+						"errormessage": {
+							"value": null,
+							"type": "String"
+						},
+						"loadstatus": {
+							"value": {
+								"value": "@activity('Copy data1').output.executionDetails[0].status",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TableName": {
+							"value": {
+								"value": "@concat(pipeline().parameters.Schema,'_',pipeline().parameters.Table)\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ONPREM_SQL",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Error_log",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[audit].[loadstatus]",
+					"storedProcedureParameters": {
+						"dataread": {
+							"value": {
+								"value": "@activity('Copy data1').output.dataread",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"errorid": {
+							"value": {
+								"value": "@activity('Copy data1').output.errors[0].code",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"errormessage": {
+							"value": {
+								"value": "@activity('Copy data1').output.errors[0].Message",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"loadstatus": {
+							"value": {
+								"value": "@activity('Copy data1').output.executionDetails[0].status",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TableName": {
+							"value": {
+								"value": "@concat(pipeline().parameters.schema,'_',pipeline().parameters.table)\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ONPREM_SQL",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Schema": {
+				"type": "string",
+				"defaultValue": "abc"
+			},
+			"Table": {
+				"type": "string",
+				"defaultValue": "abc"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-20T06:05:47Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
